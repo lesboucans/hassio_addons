@@ -8,7 +8,7 @@ ENV LANG C.UTF-8
 COPY . /
 
 COPY requirements.txt /tmp/
-RUN mkdir /opt
+RUN mkdir -p /opt
 RUN apk add --no-cache python3
 
 RUN pip3 install --requirement /tmp/requirements.txt
