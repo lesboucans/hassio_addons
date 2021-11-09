@@ -7,10 +7,13 @@ ENV LANG C.UTF-8
 
 # Copy data for add-on
 COPY . /
-
 COPY requirements.txt /tmp/
-RUN apk add --no-cache gcc
-RUN apk add --no-cache python3.9
+
+RUN apt-get update && apt-get install --no-install-recommends -y \
+    build-essential \
+    python-pip \
+    gcc
+
 RUN pip3 install --requirement /tmp/requirements.txt
 
 RUN curl -L -s \
