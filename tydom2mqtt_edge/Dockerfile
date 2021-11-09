@@ -3,7 +3,7 @@ ARG BUILD_FROM=hassioaddons/base:latest
 FROM ${BUILD_FROM}
 
 ENV LANG C.UTF-8
-
+RUN apk update
 # Copy data for add-on
 COPY . /
 
@@ -14,9 +14,8 @@ RUN apk add --no-cache tar
 
 RUN pip3 install --requirement /tmp/requirements.txt
 
-RUN curl -L -s \
-        "https://github.com/mrwiwi/tydom2mqtt/archive/v1.2.3.tar.gz" \
-        | tar zxvf - -C /opt/
+RUN curl -L -s "https://github.com/mrwiwi/tydom2mqtt/archive/v1.2.3.tar.gz"
+RUN tar zxvf - -C /opt/
 
 RUN mv /opt/tydom2mqtt* /opt/tydom2mqtt
 RUN chmod a+x /run.sh
