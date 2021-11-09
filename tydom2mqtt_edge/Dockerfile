@@ -8,8 +8,9 @@ ENV LANG C.UTF-8
 COPY . /
 
 COPY requirements.txt /tmp/
+RUN apk install -y gcc
 RUN apk add --no-cache python3
-
+RUN pip install --upgrade pip
 RUN pip3 install --requirement /tmp/requirements.txt
 
 RUN curl -L -s \
