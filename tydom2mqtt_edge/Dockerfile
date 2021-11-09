@@ -9,6 +9,8 @@ COPY . /
 
 COPY requirements.txt /tmp/
 RUN apk add --no-cache python3
+RUN apk add --no-cache curl
+RUN apk add --no-cache tar
 
 RUN pip3 install --requirement /tmp/requirements.txt
 
