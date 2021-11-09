@@ -9,10 +9,8 @@ ENV LANG C.UTF-8
 COPY . /
 COPY requirements.txt /tmp/
 
-RUN apt-get update && apt-get install --no-install-recommends -y \
-    build-essential \
-    python-pip \
-    gcc
+RUN apk add --no-cache gcc
+RUN apk add --no-cache python3
 
 RUN pip3 install --requirement /tmp/requirements.txt
 
