@@ -10,7 +10,7 @@ COPY requirements.txt /tmp/
 
 RUN apk add --no-cache gcc
 #gcc for uvloop
-RUN apk add --no-cache py3-pip
+RUN apk add --no-cache python3
 
 RUN pip3 install --requirement /tmp/requirements.txt
 
