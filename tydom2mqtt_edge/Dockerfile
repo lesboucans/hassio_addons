@@ -1,4 +1,5 @@
-ARG BUILD_FROM=hassioaddons/base:latest
+ARG BUILD_FROM=python:3.9.7-slim
+#ARG BUILD_FROM=hassioaddons/base:latest
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
