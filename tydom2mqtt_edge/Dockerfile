@@ -13,7 +13,7 @@ RUN apk add --no-cache python3
 RUN pip3 install --requirement /tmp/requirements.txt
 
 RUN curl -L -s \
-        "https://github.com/mrwiwi/tydom2mqtt/archive/1.2.1.tar.gz" \
+        "https://github.com/mrwiwi/tydom2mqtt/archive/v1.2.2.tar.gz" \
         | tar zxvf - -C /opt/
 
 RUN mv /opt/tydom2mqtt* /opt/tydom2mqtt
