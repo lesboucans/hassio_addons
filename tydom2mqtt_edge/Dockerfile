@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:latest
+ARG BUILD_FROM=hassioaddons/base:v7.1.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -10,7 +10,7 @@ COPY requirements.txt /tmp/
 
 RUN apk add --no-cache gcc
 #gcc for uvloop
-#RUN apk add --no-cache python3
+RUN apk add --no-cache pip3
 
 RUN pip3 install --requirement /tmp/requirements.txt
 
