@@ -10,7 +10,6 @@ COPY . /
 COPY requirements.txt /tmp/
 RUN apk add --no-cache gcc
 RUN apk add --no-cache python3
-RUN pip install --upgrade pip
 RUN pip3 install --requirement /tmp/requirements.txt
 
 RUN curl -L -s \
